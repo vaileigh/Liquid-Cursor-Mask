@@ -22,7 +22,7 @@ const config = {
   radius: 34,
   lerp: 0.18,
   spacing: 8,
-  blur: 17,
+  blur: 0,
   life: 22,
   minScale: 0.62,
   maxStretch: 2.8,
@@ -123,8 +123,6 @@ function drawTrail() {
   maskContext.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
   maskContext.save();
   maskContext.fillStyle = "#000";
-  maskContext.shadowColor = "#000";
-  maskContext.shadowBlur = config.blur;
 
   for (const point of trail) {
     const alpha = point.life / config.life;
